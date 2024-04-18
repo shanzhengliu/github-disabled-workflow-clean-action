@@ -21,4 +21,5 @@ jobs:
                 repo: ${{ github.event.repository.name }}
                 workflow: ''        
 ```
-## Inputs
+
+For more info: please see https://github.com/shanzhengliu/github-workflow-clean
