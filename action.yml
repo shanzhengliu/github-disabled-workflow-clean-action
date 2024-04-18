@@ -19,9 +19,9 @@
   runs:
     using: 'docker'
     image: 'Dockerfile'
-    args:
-      - GITHUB_DELETE_LEVEL=${{inputs.delete-level}}
-      - GITHUB_TOKEN=${{inputs.token}}
-      - GITHUB_OWNER=${{inputs.owner}}
-      - GITHUB_REPO=${{inputs.repo}}
-      - GITHUB_WORKFLOW_NAME=${{inputs.workflow}}
+    env:
+      GITHUB_DELETE_LEVEL=${{inputs.delete-level}}
+      GITHUB_TOKEN=${{inputs.token}}
+      GITHUB_OWNER=${{inputs.owner}}
+      GITHUB_REPO=${{inputs.repo}}
+      GITHUB_WORKFLOW_NAME=${{inputs.workflow}}
