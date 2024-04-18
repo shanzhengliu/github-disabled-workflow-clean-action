@@ -1,5 +1,8 @@
   name: github-disabled-workflow-clean
   description: 'Clean up disabled github workflow'
+  branding:
+    icon: 'delete'
+    color: 'red'
   inputs:
     delete-level:
       description: 'The level of delete, can be one of repo, workflow'
