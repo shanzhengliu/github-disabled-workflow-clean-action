@@ -1,6 +1,6 @@
 ## Action Introduction
 This action is designed to clean up the workflow which has been disabled.
-
+secrets.ACCESS_TOKEN is the github personal access token.
 ## Use Example
 ```yaml
 name: Clean up workflow
@@ -16,7 +16,7 @@ jobs:
           uses: shanzhengliu/github-disabled-workflow-clean-action@v1
           with:
                 delete-level: 'repo'
-                token: ${{ secrets.GITHUB_TOKEN }}
+                token: ${{ secrets.ACCESS_TOKEN }}
                 owner: ${{ github.repository_owner }}
                 repo: ${{ github.event.repository.name }}
                 workflow: ''        
