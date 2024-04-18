@@ -1,0 +1,27 @@
+  name: github-diabled-workflow-clean
+  description: 'Clean up disabled github workflow'
+  inputs:
+    GITHUB_DELETE_LEVEL:
+      description: 'The level of delete, can be one of repo, workflow'
+      required: true
+    GITHUB_TOKEN:
+      description: 'The github token'
+      required: true
+    GITHUB_OWNER:
+      description: 'The owner of the github repo'
+      required: true
+    GITHUB_REPO:
+      description: 'The repo of the github repo'
+      required: true
+    GITHUB_WORKFLOW_NAME:
+      description: 'The workflow name of the github repo'
+      required: false
+  runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+      - GITHUB_DELETE_LEVEL=${{inputs.GITHUB_DELETE_LEVEL}}
+      - GITHUB_TOKEN=${{inputs.GITHUB_TOKEN}}
+      - GITHUB_OWNER=${{inputs.GITHUB_OWNER}}
+      - GITHUB_REPO=${{inputs.GITHUB_REPO}}
+      - GITHUB_WORKFLOW_NAME=${{inputs.GITHUB_WORKFLOW_NAME}}
