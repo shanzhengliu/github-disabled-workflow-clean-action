@@ -1,0 +1,22 @@
+name: Test Action
+on:
+  workflow_dispatch:
+    inputs:
+      run:
+        description: 'Run the action'
+        required: true
+        default: 'true'
+jobs:
+  test-job:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Clean up workflow
+          uses: shanzhengliu/github-disabled-workflow-clean-action@v1
+          with:
+            delete-level: 'repo'
+            token: ${{ secrets.GITHUB_TOKEN }}
+            owner: ${{ github.repository_owner }}
+            repo: ${{ github.event.repository.name }}
+            workflow: ''
